@@ -93,4 +93,13 @@ public class Contenedor {
                         "\nEmpresaEmisora: '" + this.empresaEmisora + '\'' +
                         "\nEmpresaReceptora: '" + this.empresaReceptora + '\'';
         }
+
+        //Método examen
+        public String datos(){
+                return "Contenedor numero "+ this.id + ":" +
+                        "\nID: " + this.id +
+                        "\nEmpresa remitante: " + this.empresaEmisora +
+                        "\nPeso: " + this.peso +
+                        "\nEstado del chequeo: " + this.inspeccionado;
+        }
 }

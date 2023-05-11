@@ -4,13 +4,10 @@ public class Hub {
 
     private Contenedor[][] hub;
 
-    public Hub(){ //Llenamos el hub con nulls
+    public Hub(){
+
         this.hub = new Contenedor[10][12];
-        for(int i=0; i<10; i++){
-            for(int j=0; j<12; j++){
-                this.hub[i][j] = null;
-            }
-        }
+
     }
 
     //Setters y getters
@@ -53,6 +50,8 @@ public class Hub {
         }
         return "err";
     }
+
+
 
     public int AñadirContenedor(Contenedor contenedorañadido){
 
@@ -112,4 +111,25 @@ public class Hub {
         }
         return salida.toString();
     }
+
+    //Método examen
+
+    public String contenedores_base(int pri){
+        if(pri == 1 && this.hub[0][11].getPrioridad() == pri){
+            return this.hub[0][11].datos();
+        }else if(pri == 2 && this.hub[1][11].getPrioridad() == pri){
+            return this.hub[1][11].datos();
+        }else if(pri == 3){
+            StringBuilder contenedores = new StringBuilder();
+            for (int i = 2; i < 12; i++) {
+                if(this.hub[i][11].getPrioridad() == pri){
+                    contenedores.append(this.hub[i][11].datos());
+                }
+            }
+            return contenedores.toString();
+        }
+        return "no";
+    }
+
+
 }

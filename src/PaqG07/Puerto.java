@@ -56,4 +56,21 @@ public class Puerto {
         }
         return mapa.toString();
     }
+
+    //Método examen
+
+    public String bases(int prioridad){
+        StringBuilder contenedores = new StringBuilder();
+        for (int i = 0; i < 3; i++) {
+            if(!hubs[i].contenedores_base(prioridad).equals("no")){
+                contenedores.append(hubs[i].contenedores_base(prioridad));
+            }
+        }
+        if(!contenedores.isEmpty()){
+            return contenedores.toString();
+        }else{
+            return "No existen contenedores con esa prioridad en el puerto";
+        }
+    }
+
 }
